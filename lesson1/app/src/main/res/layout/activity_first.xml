@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    tools:context=".FirstActivity">
+    tools:context=".lesson2.FirstActivity">
 
     <TextView
         android:layout_width="wrap_content"
