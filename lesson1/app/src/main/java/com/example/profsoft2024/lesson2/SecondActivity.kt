@@ -1,4 +1,4 @@
-package com.example.profsoft2024
+package com.example.profsoft2024.lesson2
 
 import android.content.Context
 import android.content.Intent
@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import by.kirich1409.viewbindingdelegate.viewBinding
+import com.example.profsoft2024.R
 import com.example.profsoft2024.databinding.ActivitySecondBinding
 
 class SecondActivity : AppCompatActivity() {

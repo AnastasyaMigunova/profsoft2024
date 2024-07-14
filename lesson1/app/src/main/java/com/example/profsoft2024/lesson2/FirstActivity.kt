@@ -1,8 +1,9 @@
-package com.example.profsoft2024
+package com.example.profsoft2024.lesson2
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import by.kirich1409.viewbindingdelegate.viewBinding
+import com.example.profsoft2024.R
 import com.example.profsoft2024.databinding.ActivityFirstBinding
 
 class FirstActivity : AppCompatActivity() {
