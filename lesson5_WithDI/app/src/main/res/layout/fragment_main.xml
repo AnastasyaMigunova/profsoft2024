@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.main_screen.MainFragment">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineBegin"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="16dp" />
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="@string/title_toolbar" />
+
+    <TextView
+        android:id="@+id/textViewCityName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@id/guidelineBegin"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        tools:text="Saratov" />
+
+    <TextView
+        android:id="@+id/textViewTemp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        app:layout_constraintStart_toEndOf="@id/guidelineBegin"
+        app:layout_constraintTop_toBottomOf="@id/textViewCityName"
+        tools:text="27°C" />
+
+    <LinearLayout
+        android:id="@+id/linearLayoutFeelsLike"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/guidelineBegin"
+        app:layout_constraintTop_toBottomOf="@id/textViewTemp">
+
+        <TextView
+            android:id="@+id/textViewFeelsLikeTemp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Feels like 28°C," />
+
+        <TextView
+            android:id="@+id/textViewWeatherDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text=" clear sky." />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayoutMinMaxTemp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        app:layout_constraintStart_toEndOf="@id/guidelineBegin"
+        app:layout_constraintTop_toBottomOf="@id/linearLayoutFeelsLike">
+
+        <TextView
+            android:id="@+id/textViewMinTemp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="4dp" />
+
+        <TextView
+            android:id="@+id/textViewMaxTemp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textViewPressure"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/guidelineBegin"
+        app:layout_constraintTop_toBottomOf="@id/linearLayoutMinMaxTemp" />
+
+    <TextView
+        android:id="@+id/textViewHumidity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/guidelineBegin"
+        app:layout_constraintTop_toBottomOf="@id/textViewPressure" />
+
+    <TextView
+        android:id="@+id/textViewVisibility"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/guidelineBegin"
+        app:layout_constraintTop_toBottomOf="@id/textViewHumidity" />
+
+    <TextView
+        android:id="@+id/textViewWindSpeed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        app:layout_constraintStart_toEndOf="@id/guidelineBegin"
+        app:layout_constraintTop_toBottomOf="@id/textViewVisibility" />
+
+    <TextView
+        android:id="@+id/textViewGust"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/guidelineBegin"
+        app:layout_constraintTop_toBottomOf="@id/textViewWindSpeed" />
+
+    <TextView
+        android:id="@+id/textViewDirection"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/guidelineBegin"
+        app:layout_constraintTop_toBottomOf="@id/textViewGust" />
+</androidx.constraintlayout.widget.ConstraintLayout>

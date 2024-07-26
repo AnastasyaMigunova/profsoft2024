@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">lesson5</string>
+    <string name="title_toolbar">Погода</string>
+    <string name="feels_like">Feels like %1$d°C, </string>
+    <string name="min_temp">min: %1$d°C, </string>
+    <string name="max_temp">max: %1$d°C</string>
+    <string name="pressure">pressure: %1$d hPa</string>
+    <string name="humidity">humidity: %1$d%%</string>
+    <string name="visibility">visibility: %1$.1f km\"</string>
+    <string name="wind_speed">wind speed: %1$.1f m/s</string>
+    <string name="gust">gust: %1$.1f m/s</string>
+    <string name="direction">direction: %1$s</string>
+</resources>

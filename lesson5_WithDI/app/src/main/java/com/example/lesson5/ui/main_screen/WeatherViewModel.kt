@@ -1,0 +1,43 @@
+package com.example.lesson5.ui.main_screen
+
+import android.util.Log
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import com.example.lesson5.data.repository.WeatherRepository
+import com.example.lesson5.domain.interactor.WeatherInteractor
+import com.example.lesson5.domain.interactor.WeatherInteractorImpl
+import com.example.lesson5.ui.WeatherVo
+import dagger.hilt.android.lifecycle.HiltViewModel
+import dagger.hilt.android.scopes.ViewModelScoped
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
+import javax.inject.Inject
+
+@HiltViewModel
+class WeatherViewModel @Inject constructor(private val weatherInteractor: WeatherInteractor) :
+    ViewModel() {
+
+    private val _weather = MutableLiveData<WeatherVo>()
+    val weather: LiveData<WeatherVo> get() = _weather
+
+    init {
+        fetchWeather()
+    }
+
+    private fun fetchWeather() {
+        viewModelScope.launch(Dispatchers.IO) {
+            try {
+                val weatherData = withContext(Dispatchers.IO) {
+                    weatherInteractor.getWeather()
+                }
+                _weather.postValue(weatherData)
+            } catch (e: Exception) {
+                Log.e("APISERVICE", "Error fetching data", e)
+            }
+        }
+    }
+}
