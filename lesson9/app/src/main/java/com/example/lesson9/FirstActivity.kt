@@ -55,7 +55,7 @@ fun FirstScreen() {
 @Composable
 fun CustomText() {
     Text(
-        text = "Hello World!",
+        text = stringResource(id = R.string.hello_world),
         modifier = Modifier.padding(bottom = 40.dp),
         style = TextStyle(
             fontSize = 20.sp,

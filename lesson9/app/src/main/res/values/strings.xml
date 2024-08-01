@@ -2,5 +2,6 @@
     <string name="app_name">lesson9</string>
     <string name="button_second_activity">Активити 2</string>
     <string name="notification">Уведомление</string>
+    <string name="hello_world">Hello World!</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
