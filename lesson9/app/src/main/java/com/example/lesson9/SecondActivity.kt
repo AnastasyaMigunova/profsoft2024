@@ -46,7 +46,7 @@ fun SecondScreen(modifier: Modifier = Modifier) {
 
         CustomShape()
         Image()
-        CustomButton(secondText, 16.dp)
+        CustomButton(secondText, 16.dp) {}
     }
 }
 

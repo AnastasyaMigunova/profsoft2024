@@ -41,6 +41,8 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun FirstScreen() {
+    val currentContext = LocalContext.current
+
     Column(
         modifier = Modifier.fillMaxSize(),
         verticalArrangement = Arrangement.Center,
@@ -48,7 +50,10 @@ fun FirstScreen() {
     ) {
         val firstText = stringResource(id = R.string.button_second_activity)
         CustomText()
-        CustomButton(firstText)
+        CustomButton(firstText) {
+            val intent = Intent(currentContext, SecondActivity::class.java)
+            currentContext.startActivity(intent)
+        }
     }
 }
 
@@ -65,14 +70,9 @@ fun CustomText() {
 }
 
 @Composable
-fun CustomButton(text: String, paddingTop: Dp = 0.dp) {
-    val currentContext = LocalContext.current
-
+fun CustomButton(text: String, paddingTop: Dp = 0.dp, onClick: () -> Unit) {
     Button(
-        onClick = {
-            val intent = Intent(currentContext, SecondActivity::class.java)
-            currentContext.startActivity(intent)
-        },
+        onClick = onClick,
         modifier = Modifier
             .fillMaxWidth()
             .padding(horizontal = 32.dp)
